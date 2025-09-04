@@ -186,7 +186,7 @@ function usleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-const showWord = (wordNum) => {
+const showWord = async (wordNum) => {
   const wordElement = document.getElementById('word');
   const marqElement = document.getElementById('marq');
   const fontSize = Math.max(20, Math.min(150, 150 / words[wordNum].length));
@@ -200,7 +200,12 @@ const showWord = (wordNum) => {
   `;
   console.log(words[wordNum]);
 
-  marqElement.innerText += ` ${words[wordNum]}`;
+  if (wordNum === words.length - 1) {
+    await usleep(5000);
+    console.log('waited 5 sec');
+  } else {
+    marqElement.innerText += ` ${words[wordNum]}`;
+  }
 
   const parent = marqElement.parentElement; // the div with overflow-hidden or overflow-scroll
   parent.scrollTo({
@@ -212,7 +217,7 @@ const showWord = (wordNum) => {
 async function godWord() {
   while (true) {
     let wordNum = Math.floor(Math.random() * words.length);
-    showWord(wordNum);
+    await showWord(wordNum);
     await usleep(1000);
   }
 }
@@ -246,4 +251,4 @@ alert(
   **GOD TALKS TO YOU THROUGH YOU**
   `
 );
-// godWord();
+godWord();
