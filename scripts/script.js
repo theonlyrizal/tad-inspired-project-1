@@ -190,14 +190,17 @@ function usleep(ms) {
 const showWord = (wordNum) => {
   const wordElement = document.getElementById('word');
   const marqElement = document.getElementById('marq');
+  const fontSize = Math.max(20, Math.min(150, 150 / words[wordNum].length));
+
   wordElement.innerHTML = '';
   wordElement.innerHTML = `
-    <span class="font-serif text-[calc(100vw/${words[wordNum].length})] font-bold">${
-    words[wordNum]
-  }</span>
+   <span class="font-serif font-bold" 
+        style="font-size: calc(100vw / ${words[wordNum].length + 1});">
+    ${words[wordNum]}
+  </span>
   `;
   console.log(words[wordNum]);
-  
+
   marqElement.innerText += ` ${words[wordNum]}`;
 
   const parent = marqElement.parentElement; // the div with overflow-hidden or overflow-scroll
