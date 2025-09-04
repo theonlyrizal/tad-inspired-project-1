@@ -196,6 +196,8 @@ const showWord = (wordNum) => {
     words[wordNum]
   }</span>
   `;
+  console.log(words[wordNum]);
+  
   marqElement.innerText += ` ${words[wordNum]}`;
 
   const parent = marqElement.parentElement; // the div with overflow-hidden or overflow-scroll
