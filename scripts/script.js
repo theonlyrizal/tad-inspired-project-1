@@ -214,20 +214,27 @@ async function godWord() {
   while (true) {
     let wordNum = Math.floor(Math.random() * words.length);
     showWord(wordNum);
-    await usleep(1500);
+    await usleep(1000);
   }
 }
 
-const audio = document.getElementById('bg-audio');
 const button = document.getElementById('audio-button');
+let audio;
 
 button.addEventListener('click', () => {
-  if (audio.muted) {
-    audio.muted = false; // unmute
-    button.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+  if (!audio) {
+    audio = document.createElement('audio');
+    audio.src = './assets/sound.mp3';
+    audio.loop = true;
+    audio.autoplay = true;
+    document.body.appendChild(audio); // append to DOM so it plays
+    button.innerHTML = '<i class="fa-solid fa-volume-high fa-2xl"></i>';
+  } else if (audio.paused) {
+    audio.play();
+    button.innerHTML = '<i class="fa-solid fa-volume-high fa-2xl"></i>';
   } else {
-    audio.muted = true; // mute
-    button.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+    audio.pause();
+    button.innerHTML = '<i class="fa-solid fa-volume-xmark fa-2xl"></i>';
   }
 });
 
