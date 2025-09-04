@@ -155,7 +155,6 @@ const words = [
   'Father',
   'Grasp',
   'Hitler',
-  'Jump',
   'Kennedy',
   'Literature',
   'Zion',
@@ -238,5 +237,5 @@ button.addEventListener('click', () => {
   }
 });
 
-alert('⚠️ If you are Sound Sensitive, please do not Unmute the 🔇 button');
+// alert('⚠️ If you are Sound Sensitive, please do not Unmute the 🔇 button');
 godWord();
