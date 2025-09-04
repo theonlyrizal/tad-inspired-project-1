@@ -179,7 +179,7 @@ const words = [
   'Week',
   'Weak',
 
-  `"Which, then, of your Lord's blessings (or favors) do you both deny?"`,
+  `"Which of your Lord's blessings can you deny?"`,
 ];
 
 function usleep(ms) {
@@ -237,5 +237,13 @@ button.addEventListener('click', () => {
   }
 });
 
-// alert('⚠️ If you are Sound Sensitive, please do not Unmute the 🔇 button');
-godWord();
+alert(
+  `⚠️ If you are Sound Sensitive, please do not Unmute the 🔇 button.
+  Also, It's better this way.
+  A Silent mind can HEAR GOD's words of Silence.
+  If you get the chance to face the only QUESTION GOD put in the codes, answer it to yourself.
+  Find the answers of all the questions you asked yourself in the times of Joy or Hardship.
+  **GOD TALKS TO YOU THROUGH YOU**
+  `
+);
+// godWord();
