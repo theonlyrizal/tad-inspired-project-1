@@ -49,7 +49,7 @@ const words = [
   'Rage',
   'Light',
   'Dark',
-  'Rise0',
+  'Rise',
   'Heaven',
   'Hell',
   'Greed',
@@ -127,14 +127,90 @@ const words = [
   'Run',
   'Jump',
   'Walk',
+  'Joy',
+  'Care',
+  'Mind',
+  'Yellow',
+  'Red',
+  'Think',
+  'Pitty',
+  'False',
+  'True',
+  'Prepare',
+  'Join',
+  'Leave',
+  'Question',
+  'Answer',
+  'Enemy',
+  'Revenge',
+  'Terrify',
+  'Yield',
+  'Unite',
+  'Inside',
+  'Ordinary',
+  'Power',
+  'Adult',
+  'Sacrifice',
+  'Defeat',
+  'Father',
+  'Grasp',
+  'Hitler',
+  'Jump',
+  'Kennedy',
+  'Literature',
+  'Zion',
+  'X',
+  'Choose',
+  'Vision',
+  'Bare',
+  'New',
+  'Magic',
+  'Quran',
+  'Queue',
+  'Quest',
+  'Wonder',
+  'Worry',
+  'Warrior',
+  'Wasp',
+  'Work',
+  'Weiver',
+  'Wish',
+  'Word',
+  'Win',
+  'Week',
+  'Weak',
+
+  `"Which, then, of your Lord's blessings (or favors) do you both deny?"`,
 ];
 
 function usleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+const showWord = (wordNum) => {
+  const wordElement = document.getElementById('word');
+  const marqElement = document.getElementById('marq');
+  wordElement.innerHTML = '';
+  wordElement.innerHTML = `
+    <span class="font-serif text-[calc(100vw/${words[wordNum].length})] font-bold">${
+    words[wordNum]
+  }</span>
+  `;
+  marqElement.innerText += ` ${words[wordNum]}`;
+
+  const parent = marqElement.parentElement; // the div with overflow-hidden or overflow-scroll
+  parent.scrollTo({
+    left: parent.scrollWidth,
+    behavior: 'smooth',
+  });
+};
+
 async function godWord() {
-  while(true){
-    let wordNum = Math.round(Math.random()* words.length)
+  while (true) {
+    let wordNum = Math.floor(Math.random() * words.length);
+    showWord(wordNum);
+    await usleep(1500);
   }
 }
+
+godWord();

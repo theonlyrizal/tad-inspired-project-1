@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GOD's Words</title>
     <link rel="shortcut icon" href="./assets/elephent.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./styles/style.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body id="web-body" class="flex justify-center">
-    <div id="main-body" class="self-center bg-cover w-[100vh] h-[100vh] border-1 border-black">
-      <marquee
-        id="scroll"
-        class="scroll-5 m-0 p-0 w-full h-[calc(3vh)] bg-yellow-300"
-        scrollamount="3"
-        >Names Barn Lee Cat</marquee
-      >
-      <div id="word" class="flex justify-center items-center m-0 p-0 w-full h-[95vh] bg-blue-400">
-        <span class="font-serif text-[calc(100vh/6)] font-bold">Parano</span>
+    <div id="main-body" class="self-center bg-cover w-full max-w-[100vw] h-[100vh] border-0 border-black">
+      <div class="flex items-center overflow-x-scroll hide-scrollbar w-full h-[5vh] bg-yellow-300 relative">
+        <div id="marq" class="text-right absolute whitespace-nowrap"></div>
+      </div>
+      <div id="word" class="flex justify-center items-center m-0 p-0 w-full h-[95vh] bg-white">
+        <span class="font-serif text-[calc(100vw/3)] font-bold">GOD</span>
       </div>
     </div>
 
