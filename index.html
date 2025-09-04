@@ -6,10 +6,22 @@
     <title>GOD's Words</title>
     <link rel="shortcut icon" href="./assets/elephent.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/style.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
   <body id="web-body" class="flex justify-center bg-zinc-300">
+    <audio id="bg-audio" src="./assets/sound.mp3" autoplay loop muted></audio>
+    <button id="audio-button" class="btn absolute bottom-10 left-10 rounded-xl shadow-none">
+      <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+
     <div id="main-body" class="w-full max-w-[100vw] h-[100vh] border-5 rounded-xl border-black">
       <div
         class="flex items-center overflow-x-scroll hide-scrollbar w-full h-[7vh] mt-[5vh] bg-yellow-300 relative"

@@ -218,4 +218,18 @@ async function godWord() {
   }
 }
 
+const audio = document.getElementById('bg-audio');
+const button = document.getElementById('audio-button');
+
+button.addEventListener('click', () => {
+  if (audio.muted) {
+    audio.muted = false; // unmute
+    button.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+  } else {
+    audio.muted = true; // mute
+    button.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+  }
+});
+
+alert('⚠️ If you are Sound Sensitive, please do not Unmute the 🔇 button');
 godWord();
